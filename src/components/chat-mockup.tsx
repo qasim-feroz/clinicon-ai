@@ -65,7 +65,7 @@ const BEFORE_MESSAGES: Message[] = [
   },
   {
     id: "b2",
-    text: "Sorry, we're closed. The clinic timinngs are from 2:00 PM to 6:00 PM.",
+    text: "Sorry, we are currently closed. Our clinic hours are from 2:00 PM to 6:00 PM",
     sender: "ai",
     time: "07:00 PM",
   },
@@ -77,6 +77,11 @@ export function ChatMockup() {
   const [afterMessages, setAfterMessages] = useState<Message[]>([]);
   const [isTyping, setIsTyping] = useState(false);
   const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  const isBeforeScreen = stage === "before";
+  const isAfterScreen = stage === "after";
+  const showBeforeHeader = stage === "before";
+  const showAfterHeader = stage === "cross-out" || stage === "after";
 
   useEffect(() => {
     let timeouts: ReturnType<typeof setTimeout>[] = [];
@@ -175,13 +180,68 @@ export function ChatMockup() {
 
   return (
     <div className="relative w-full max-w-sm mx-auto bg-[#efeae2] rounded-3xl overflow-hidden shadow-2xl border-4 border-gray-900 max-h-[calc(100vh-180px)]">
-      <div className="bg-[#005e54] text-white p-4 flex items-center gap-3 shadow-md relative z-10">
-        <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center overflow-hidden shrink-0">
-          <Bot className="w-6 h-6 text-[#005e54]" />
+      <div className="bg-[#005e54] text-white p-4 flex items-center gap-3 shadow-md relative z-10 min-h-[72px]">
+        <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center overflow-hidden shrink-0">
+          <AnimatePresence mode="wait">
+            {showBeforeHeader && (
+              <motion.div
+                key="before-avatar"
+                initial={{ opacity: 0, scale: 0.85 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.85 }}
+                transition={{ duration: 0.35 }}
+                className="w-full h-full flex items-center justify-center"
+              >
+                <Bot className="w-6 h-6 text-[#005e54]" />
+              </motion.div>
+            )}
+
+            {showAfterHeader && (
+              <motion.div
+                key="after-avatar"
+                initial={{ opacity: 0, scale: 0.85 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.85 }}
+                transition={{ duration: 0.35 }}
+                className="w-full h-full rounded-full bg-primary flex items-center justify-center border-3 border-white"
+                style={{ boxSizing: 'border-box' }}
+              >
+                <Bot className="w-6 h-6 text-white" />
+              </motion.div>
+            )}
+
+          </AnimatePresence>
         </div>
-        <div className="flex-1">
-          <h3 className="font-semibold text-base leading-tight">Clinicon Front Desk</h3>
-          <p className="text-xs text-white/80">Always online</p>
+        <div className="flex-1 overflow-hidden">
+          <AnimatePresence mode="wait">
+            {showBeforeHeader && (
+              <motion.div
+                key="before-header"
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.35 }}
+                className="flex flex-col gap-1"
+              >
+                <h3 className="font-semibold text-base leading-tight">Ordinary Chatbot</h3>
+                <p className="text-xs text-white/80">Standard Timings</p>
+              </motion.div>
+            )}
+
+            {showAfterHeader && (
+              <motion.div
+                key="after-header"
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.35 }}
+                className="flex flex-col gap-1"
+              >
+                <h3 className="font-semibold text-base leading-tight">Clinicon AI</h3>
+                <p className="text-xs text-white/80">Always Online</p>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
 
@@ -220,41 +280,43 @@ export function ChatMockup() {
         </AnimatePresence>
 
         <div className="relative z-10 flex flex-col gap-4">
-          <div className="space-y-3">
-            {(stage === "before" || stage === "cross-in") && (
-              <>
-                <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-red-700">
-                  <span className="h-2 w-2 rounded-full bg-red-500" />
-                  Ordinary Chatbot
-                </div>
-
-                <div className="space-y-3">
-                  {beforeVisible.map((msg) => (
-                    <div key={msg.id} className={`flex w-full ${msg.sender === "user" ? "justify-end" : "justify-start"}`}>
-                      <div className={`max-w-[85%] rounded-2xl px-3 py-2 text-sm shadow-sm relative ${
-                          msg.sender === "user"
-                            ? "bg-[#dcf8c6] text-gray-900 rounded-tr-sm"
-                            : "bg-white text-gray-900 rounded-tl-sm"
-                        }`}>
-                        <p>{msg.text}</p>
-                        <div className="flex items-center justify-end gap-1 mt-1">
-                          <span className="text-[10px] text-gray-500">{msg.time}</span>
-                          {msg.sender === "user" && <CheckCheck className="w-3 h-3 text-[#53bdeb]" />}
-                        </div>
+          <AnimatePresence mode="wait">
+            {isBeforeScreen && (
+              <motion.div
+                key="before-screen"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.4 }}
+                className="space-y-3"
+              >
+                {beforeVisible.map((msg) => (
+                  <div key={msg.id} className={`flex w-full ${msg.sender === "user" ? "justify-end" : "justify-start"}`}>
+                    <div className={`max-w-[85%] rounded-2xl px-3 py-2 text-sm shadow-sm relative ${
+                        msg.sender === "user"
+                          ? "bg-[#dcf8c6] text-gray-900 rounded-tr-sm"
+                          : "bg-white text-gray-900 rounded-tl-sm"
+                      }`}>
+                      <p>{msg.text}</p>
+                      <div className="flex items-center justify-end gap-1 mt-1">
+                        <span className="text-[10px] text-gray-500">{msg.time}</span>
+                        {msg.sender === "user" && <CheckCheck className="w-3 h-3 text-[#53bdeb]" />}
                       </div>
                     </div>
-                  ))}
-                </div>
-              </>
+                  </div>
+                ))}
+              </motion.div>
             )}
 
-            {stage === "after" && (
-              <div className="space-y-3">
-                <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-secondary">
-                  <span className="h-2 w-2 rounded-full bg-secondary" />
-                  Clinicon AI
-                </div>
-
+            {isAfterScreen && (
+              <motion.div
+                key="after-screen"
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.4 }}
+                className="space-y-3"
+              >
                 <div className="flex flex-col gap-3">
                   <AnimatePresence initial={false}>
                     {afterMessages.map((msg) => (
@@ -297,9 +359,9 @@ export function ChatMockup() {
                     </motion.div>
                   )}
                 </div>
-              </div>
+              </motion.div>
             )}
-          </div>
+          </AnimatePresence>
         </div>
       </div>
 
