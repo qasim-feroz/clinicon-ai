@@ -403,6 +403,7 @@ export default function Home() {
                 <span className="text-4xl font-extrabold text-white">PKR 35,000</span>
                 <span className="text-gray-400">/mo</span>
               </div>
+              <p className="text-xs text-gray-400 mb-3">Everthing in the Basic plan plus:</p>
               <ul className="space-y-4 mb-8 flex-1">
                 {["Smart appointment booking flow", "Auto follow-ups that bring back lost patients", "Personalized replies tailored to your clinic", "No setup charges (Free onboarding)"].map((feature, i) => (
                   <li key={i} className="flex items-center gap-3 text-gray-300">
