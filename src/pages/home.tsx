@@ -19,7 +19,7 @@ import {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans">
+    <div className="min-h-screen bg-background text-foreground font-sans pb-24 md:pb-0">
       <FloatingWhatsApp />
 
       {/* Navigation */}
@@ -54,7 +54,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 md:pt-40 md:pb-32 px-6 overflow-hidden">
+      <section className="pt-24 pb-14 md:pt-40 md:pb-32 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -129,8 +129,8 @@ export default function Home() {
       </section> */}
 
       {/* Problem Section */}
-      <section className="py-24 bg-gray-50 px-6 pt-0">
-        <div className="max-w-4xl mx-auto text-center mb-16">
+      <section className="py-14 md:py-24 bg-gray-50 px-6 pt-0">
+        <div className="max-w-4xl mx-auto text-center mb-10 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             You're Losing Paitents Every Day
           </h2>
@@ -139,7 +139,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="max-w-5xl mx-auto flex gap-6 overflow-x-auto snap-x snap-mandatory px-1 pb-2 md:grid md:grid-cols-2 lg:grid-cols-4 md:overflow-visible md:pb-0">
           {[
             { icon: Clock, title: "Slow Replies", desc: "Patients wait hours for a simple answer." },
             { icon: MessageSquare, title: "Missed Messages", desc: "Inquiries slip through the cracks during busy hours." },
@@ -152,7 +152,7 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100"
+              className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 min-w-[85%] sm:min-w-[60%] md:min-w-0 shrink-0 snap-start"
             >
               <div className="w-12 h-12 bg-red-50 text-red-500 rounded-xl flex items-center justify-center mb-4">
                 <item.icon className="w-6 h-6" />
@@ -165,7 +165,7 @@ export default function Home() {
       </section>
 
       {/* Solution Section */}
-      <section id="features" className="py-24 px-6 bg-white">
+      <section id="features" className="py-14 md:py-24 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -230,11 +230,11 @@ export default function Home() {
       </section>
 
       {/* Use Cases Section */}
-      <section id="use-cases" className="py-24 bg-gray-50 px-6">
+      <section id="use-cases" className="py-14 md:py-24 bg-gray-50 px-6">
         <div className="max-w-7xl mx-auto">
           
           {/* Header */}
-          <div className="text-center mb-16 max-w-2xl mx-auto">
+          <div className="text-center mb-10 md:mb-16 max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Built for Clinics That Depend on Appointments
             </h2>
@@ -244,7 +244,7 @@ export default function Home() {
           </div>
 
           {/* Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory px-1 pb-2 md:grid md:grid-cols-2 lg:grid-cols-4 md:overflow-visible md:pb-0">
             {[
               { 
                 icon: Stethoscope, 
@@ -270,7 +270,7 @@ export default function Home() {
               <motion.div 
                 key={i}
                 whileHover={{ y: -5 }}
-                className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-all cursor-default"
+                className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-all cursor-default min-w-[85%] sm:min-w-[60%] md:min-w-0 shrink-0 snap-start"
               >
                 <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
                   <useCase.icon className="w-6 h-6" />
@@ -286,7 +286,7 @@ export default function Home() {
           </div>
 
           {/* Conversion CTA */}
-          <div className="text-center mt-14">
+          <div className="text-center mt-10 md:mt-14">
             <p className="text-gray-800 text-lg font-medium mb-4">
               Want more patients without hiring extra staff?
             </p>
@@ -309,9 +309,9 @@ export default function Home() {
       </section>
 
       {/* Before vs After */}
-      <section className="py-24 px-6 bg-white overflow-hidden">
+      <section className="py-14 md:py-24 px-6 bg-white overflow-hidden">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-16">The Clinicon Difference</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-10 md:mb-16">The Clinicon Difference</h2>
           
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-red-50/50 border border-red-100 rounded-3xl p-8 md:p-12 relative overflow-hidden">
@@ -354,9 +354,9 @@ export default function Home() {
       </section>
 
       {/* Pricing */}
-      <section id="pricing" className="py-24 bg-gray-50 px-6">
+      <section id="pricing" className="py-14 md:py-24 bg-gray-50 px-6">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Simple, Transparent Pricing</h2>
             <p className="text-lg text-gray-600">Invest in a receptionist that never clocks out.</p>
           </div>
@@ -433,13 +433,13 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 px-6 bg-primary relative overflow-hidden">
+      <section className="py-14 md:py-24 px-6 bg-primary relative overflow-hidden">
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px' }} />
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
             Start Capturing Every Patient Today
           </h2>
-          <p className="text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 md:mb-10 max-w-2xl mx-auto">
             Stop losing business to slow replies. Set up your AI Receptionist and let it handle the front desk while you focus on your craft.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -456,8 +456,31 @@ export default function Home() {
               Talk to Sales
             </Button>
           </div>
+          <div className="mt-6 md:mt-8 flex flex-wrap justify-center gap-2 md:gap-3">
+            {["Setup in 24 Hours", "No Technical Skills Needed", "Built for Clinics & Salons"].map((item, i) => (
+              <span
+                key={i}
+                className="inline-flex items-center rounded-full border border-white/30 bg-white/10 px-3 py-1.5 text-xs font-medium text-white/90"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
+
+      {/* Mobile Sticky CTA */}
+      <div className="fixed bottom-4 left-1/2 z-50 w-[calc(100%-1.5rem)] -translate-x-1/2 md:hidden">
+        <Button asChild className="h-12 w-full bg-secondary hover:bg-secondary/90 text-white text-sm font-semibold shadow-xl">
+          <a
+            href="https://wa.me/923244910858?text=Hi%2C%20I%20want%20a%20demo%20of%20your%20AI%20receptionist%20for%20my%20clinic.%20Can%20you%20show%20me%20how%20it%20handles%20patient%20appointments%3F"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Get Demo on WhatsApp
+          </a>
+        </Button>
+      </div>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-gray-400 py-12 px-6 border-t border-gray-800">
