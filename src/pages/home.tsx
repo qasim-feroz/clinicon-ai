@@ -2,10 +2,19 @@ import { motion } from "framer-motion";
 import { ChatMockup } from "@/components/chat-mockup";
 import { FloatingWhatsApp } from "@/components/floating-whatsapp";
 import { Button } from "@/components/ui/button";
-import { 
-  Bot, Clock, CalendarCheck, Users, 
-  MessageSquare, CheckCircle2, TrendingUp,
-  Stethoscope, Scissors, Home as HomeIcon, Wrench
+import {
+  Bot,
+  Clock,
+  CalendarCheck,
+  Users,
+  MessageSquare,
+  CheckCircle2,
+  TrendingUp,
+  Stethoscope,
+  Scissors,
+  Sparkles,
+  Smile,
+  TrendingDown
 } from "lucide-react";
 
 export default function Home() {
@@ -28,11 +37,17 @@ export default function Home() {
             <a href="#pricing" className="hover:text-primary transition-colors">Pricing</a>
           </div>
           <div className="flex items-center gap-4">
-            <a href="#demo" className="hidden sm:block text-sm font-medium text-primary hover:underline">
+            <a href="https://wa.me/923244910858?text=Hi%2C%20I%20want%20a%20demo%20of%20your%20AI%20receptionist%20for%20my%20clinic.%20Can%20you%20show%20me%20how%20it%20handles%20patient%20appointments%3F" className="hidden sm:block text-sm font-medium text-primary hover:underline">
               Watch Demo
             </a>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm">
-              Get Started
+            <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm">
+              <a
+                href="https://wa.me/923244910858?text=Hi%2C%20I%20want%20you%20to%20setup%20AI%20Receptionist%20for%20my%20business.%20Can%20you%20tell%20me%20how%20it%20works%3F"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Get Started
+              </a>
             </Button>
           </div>
         </div>
@@ -55,28 +70,34 @@ export default function Home() {
               <span className="text-xs font-semibold uppercase tracking-wider">AI Receptionist is Online</span>
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 leading-[1.1]">
-              Never Miss a <span className="text-primary">Customer</span> Again
+              Never Miss a <span className="text-primary">Patient</span> Inquiry
             </h1>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-lg">
-              The AI Receptionist that replies instantly on WhatsApp, books appointments, and handles customer queries 24/7.
+              Turn your WhatsApp into an AI receptionist that instantly replies, books appointments, and handles patient queries — 24/7 without hiring staff.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white text-base h-14 px-8 shadow-lg">
-                Get Your AI Receptionist
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-white text-base h-14 px-8 shadow-lg">
+                <a
+                  href="https://wa.me/923244910858?text=Hi%2C%20I%20want%20a%20demo%20of%20your%20AI%20receptionist%20for%20my%20clinic.%20Can%20you%20show%20me%20how%20it%20handles%20patient%20appointments%3F"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Get Your AI Receptionist
+                </a>
               </Button>
               <Button size="lg" variant="outline" className="text-base h-14 px-8 border-gray-200">
                 Watch Demo
               </Button>
             </div>
             <div className="flex items-center gap-4 text-sm text-gray-500 pt-4">
-              <div className="flex -space-x-2">
+              {/* <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
                   <div key={i} className="w-8 h-8 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center text-xs font-bold text-gray-400">
                     {String.fromCharCode(64 + i)}
                   </div>
                 ))}
-              </div>
-              <p>Trusted by 500+ service businesses</p>
+              </div> */}
+              <p>Built for modern clinics & service businesses</p>
             </div>
           </motion.div>
           
@@ -93,37 +114,37 @@ export default function Home() {
       </section>
 
       {/* Social Proof (Logos Placeholder) */}
-      <section className="py-10 border-y border-border/50 bg-white">
+      {/* <section className="py-10 border-y border-border/50 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-center text-sm font-semibold text-gray-400 uppercase tracking-wider mb-6">
-            Powering customer service for top clinics & salons
+            Powering patient service for top clinics & salons
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale">
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale"> */}
             {/* Placeholders for logos */}
-            {['Acme Clinic', 'Glow Salon', 'Elite Dental', 'Prime Physio', 'Urban Spa'].map((name) => (
+            {/* {['Acme Clinic', 'Glow Salon', 'Elite Dental', 'Prime Physio', 'Urban Spa'].map((name) => (
               <div key={name} className="text-xl font-bold text-gray-400">{name}</div>
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Problem Section */}
-      <section className="py-24 bg-gray-50 px-6">
+      <section className="py-24 bg-gray-50 px-6 pt-0">
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            You're Losing Customers Every Day
+            You're Losing Paitents Every Day
           </h2>
           <p className="text-lg text-gray-600">
-            While your staff is busy or your business is closed, potential clients are messaging you. When you don't reply instantly, they go to competitors.
+            While your staff is busy or your clinic is closed, potential patients are messaging you. When you don't reply instantly, they go to competitors.
           </p>
         </div>
 
         <div className="max-w-5xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { icon: Clock, title: "Slow Replies", desc: "Customers wait hours for a simple answer." },
+            { icon: Clock, title: "Slow Replies", desc: "Patients wait hours for a simple answer." },
             { icon: MessageSquare, title: "Missed Messages", desc: "Inquiries slip through the cracks during busy hours." },
             { icon: Users, title: "Overloaded Staff", desc: "Your team spends hours answering repetitive questions." },
-            { icon: trendingDownIcon, title: "Lost Revenue", desc: "No 24/7 availability means missing after-hours bookings." }
+            { icon: TrendingDown, title: "Lost Revenue", desc: "No 24/7 availability means missing after-hours bookings." }
           ].map((item, i) => (
             <motion.div 
               key={i}
@@ -156,12 +177,12 @@ export default function Home() {
                 Meet Your AI Receptionist
               </h2>
               <p className="text-lg text-gray-600 mb-8">
-                A digital front desk that never sleeps, takes no breaks, and handles every customer with perfect professionalism.
+                A digital front desk that never sleeps, takes no breaks, and handles every patient with perfect professionalism.
               </p>
 
               <div className="space-y-6">
                 {[
-                  { icon: CheckCircle2, title: "Replies Instantly", desc: "Zero wait time. Customers get answers the second they message." },
+                  { icon: CheckCircle2, title: "Replies Instantly", desc: "Zero wait time. Patients get answers the second they message." },
                   { icon: CalendarCheck, title: "Books Appointments", desc: "Connects to your calendar and schedules bookings automatically." },
                   { icon: Bot, title: "Handles FAQs", desc: "Answers questions about pricing, location, and services perfectly." },
                   { icon: TrendingUp, title: "Captures Leads", desc: "Collects names and numbers even while you sleep." }
@@ -188,8 +209,8 @@ export default function Home() {
                 <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent">
                   {[
                     { step: "1", title: "We set it up", desc: "We train the AI on your specific business details." },
-                    { step: "2", title: "Customers message", desc: "They reach out on WhatsApp like normal." },
-                    { step: "3", title: "AI handles it", desc: "Instant replies, bookings, and happy customers." }
+                    { step: "2", title: "Patients message", desc: "They reach out on WhatsApp like normal." },
+                    { step: "3", title: "AI handles it", desc: "Instant replies, bookings, and happy patients." }
                   ].map((step, i) => (
                     <div key={i} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                       <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-primary text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 font-bold z-10">
@@ -211,17 +232,40 @@ export default function Home() {
       {/* Use Cases Section */}
       <section id="use-cases" className="py-24 bg-gray-50 px-6">
         <div className="max-w-7xl mx-auto">
+          
+          {/* Header */}
           <div className="text-center mb-16 max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Built for Service Businesses</h2>
-            <p className="text-lg text-gray-600">If your business relies on appointments and inquiries, Clinicon AI is built for you.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Built for Clinics That Depend on Appointments
+            </h2>
+            <p className="text-lg text-gray-600">
+              Whether you're handling patient inquiries or booking consultations, Clinicon AI ensures you never lose a lead again.
+            </p>
           </div>
 
+          {/* Cards */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Stethoscope, title: "Clinics & Dental", desc: "Handle patient queries, book checkups, and send reminders." },
-              { icon: Scissors, title: "Salons & Spas", desc: "Manage stylist schedules, share service menus, and book slots." },
-              { icon: HomeIcon, title: "Real Estate", desc: "Qualify leads, schedule viewings, and share property details instantly." },
-              { icon: Wrench, title: "Home Services", desc: "Book quotes for plumbing, cleaning, and repairs 24/7." }
+              { 
+                icon: Stethoscope, 
+                title: "Clinics & Healthcare", 
+                desc: "Reply instantly to patient inquiries, book appointments, and reduce missed calls — 24/7." 
+              },
+              { 
+                icon: Smile, 
+                title: "Dental Clinics", 
+                desc: "Handle appointment requests, answer the questions, and keep your schedule fully booked." 
+              },
+              { 
+                icon: Sparkles, 
+                title: "Aesthetic Clinics", 
+                desc: "Convert inquiries into consultations instantly by answering pricing, treatments, and availability." 
+              },
+              { 
+                icon: Scissors, 
+                title: "Salons & Spas", 
+                desc: "Automate client replies, share services, and fill your calendar with confirmed bookings." 
+              }
             ].map((useCase, i) => (
               <motion.div 
                 key={i}
@@ -231,11 +275,36 @@ export default function Home() {
                 <div className="w-12 h-12 bg-primary/10 text-primary rounded-xl flex items-center justify-center mb-6">
                   <useCase.icon className="w-6 h-6" />
                 </div>
-                <h3 className="font-bold text-xl text-gray-900 mb-3">{useCase.title}</h3>
-                <p className="text-gray-600">{useCase.desc}</p>
+                <h3 className="font-bold text-xl text-gray-900 mb-3">
+                  {useCase.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">
+                  {useCase.desc}
+                </p>
               </motion.div>
             ))}
           </div>
+
+          {/* Conversion CTA */}
+          <div className="text-center mt-14">
+            <p className="text-gray-800 text-lg font-medium mb-4">
+              Want more patients without hiring extra staff?
+            </p>
+
+            <a
+              href="https://wa.me/923244910858?text=Hi%2C%20I%20want%20a%20demo%20of%20your%20AI%20receptionist%20for%20my%20clinic.%20Can%20you%20show%20me%20how%20it%20handles%20patient%20appointments%3F"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-flex items-center justify-center bg-primary text-white px-7 py-3 rounded-xl font-semibold shadow-md hover:opacity-90 transition"
+            >
+              Get Demo on WhatsApp
+            </a>
+
+            <p className="text-sm text-gray-500 mt-3">
+              • We Will Setup For You
+            </p>
+          </div>
+
         </div>
       </section>
 
@@ -251,7 +320,7 @@ export default function Home() {
               <ul className="space-y-4">
                 {[
                   "Missed leads during off-hours",
-                  "Slow response times lose customers",
+                  "Slow response times lose patients",
                   "Staff overwhelmed by repetitive questions",
                   "Manual appointment booking errors"
                 ].map((text, i) => (
@@ -270,8 +339,8 @@ export default function Home() {
                 {[
                   "Instant replies, 24/7/365",
                   "Capture every single lead immediately",
-                  "Staff focuses on serving clients in-person",
-                  "Automated, error-free calendar bookings"
+                  "Automated, error-free calendar bookings",
+                  "Automated follow-ups for appointments"
                 ].map((text, i) => (
                   <li key={i} className="flex gap-3 text-primary-foreground">
                     <span className="w-6 h-6 rounded-full bg-secondary flex items-center justify-center shrink-0 mt-0.5 text-white font-bold text-sm">✓</span>
@@ -292,46 +361,74 @@ export default function Home() {
             <p className="text-lg text-gray-600">Invest in a receptionist that never clocks out.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm flex flex-col">
-              <h3 className="text-2xl font-bold text-gray-900">Starter</h3>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto items-stretch">
+            <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm flex flex-col h-full">
+              <h3 className="text-2xl font-bold text-gray-900">Basic</h3>
               <p className="text-gray-500 mt-2">For independent professionals.</p>
               <div className="my-6">
-                <span className="text-4xl font-extrabold text-gray-900">$49</span>
-                <span className="text-gray-500">/mo</span>
+                <span className="text-4xl font-extrabold text-gray-900">PKR 20,000</span>
+                <span className="text-gray-500">/month</span>
               </div>
               <ul className="space-y-4 mb-8 flex-1">
-                {["Basic automation", "WhatsApp integration", "500 conversations/mo", "FAQ handling"].map((feature, i) => (
+                {["24/7 instant replies to every patient", "Never miss inquiries — even after clinic hours", "We set everything up for you"].map((feature, i) => (
                   <li key={i} className="flex items-center gap-3 text-gray-700">
                     <CheckCircle2 className="w-5 h-5 text-secondary" /> {feature}
                   </li>
                 ))}
               </ul>
-              <Button variant="outline" className="w-full h-12 text-base font-semibold">Start Free Trial</Button>
+              <div className="mt-auto pt-5 border-t border-dashed border-gray-200">
+                <p className="text-xs text-gray-500 leading-relaxed">
+                  <span className="font-semibold uppercase tracking-wide text-gray-600">*</span>{" "}
+                  One-time onboarding fee applies: PKR. 15,000
+                </p>
+              </div>
+              <Button asChild variant="outline" className="w-full h-12 text-base font-semibold">
+                <a
+                  href="https://wa.me/923244910858?text=Hi%2C%20I%20want%20you%20to%20setup%20Basic%20plan%20for%20my%20business.%20Can%20you%20tell%20me%20how%20it%20works%3F"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Get Basic Plan
+                </a>
+              </Button>
             </div>
 
-            <div className="bg-[#0f172a] rounded-3xl p-8 border border-gray-800 shadow-2xl flex flex-col relative overflow-hidden">
+            <div className="bg-[#0f172a] rounded-3xl p-8 border border-gray-800 shadow-2xl flex flex-col relative overflow-hidden h-full">
               <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-secondary to-[#53bdeb]" />
               <div className="absolute top-6 right-6 bg-secondary/20 text-secondary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Most Popular</div>
               
-              <h3 className="text-2xl font-bold text-white">Business</h3>
+              <h3 className="text-2xl font-bold text-white">Pro</h3>
               <p className="text-gray-400 mt-2">For growing clinics and salons.</p>
               <div className="my-6">
-                <span className="text-4xl font-extrabold text-white">$99</span>
+                <span className="text-4xl font-extrabold text-white">PKR 35,000</span>
                 <span className="text-gray-400">/mo</span>
               </div>
               <ul className="space-y-4 mb-8 flex-1">
-                {["Full AI automation", "Appointment booking integration", "Unlimited conversations", "Advanced Lead Capture", "Priority Support"].map((feature, i) => (
+                {["Smart appointment booking flow", "Auto follow-ups that bring back lost patients", "Personalized replies tailored to your clinic", "No setup charges (Free onboarding)"].map((feature, i) => (
                   <li key={i} className="flex items-center gap-3 text-gray-300">
                     <CheckCircle2 className="w-5 h-5 text-secondary" /> {feature}
                   </li>
                 ))}
               </ul>
-              <Button className="w-full h-12 text-base font-semibold bg-secondary hover:bg-secondary/90 text-white">Get Business Plan</Button>
+              <div className="mt-auto pt-5 border-t border-dashed border-gray-500">
+                <p className="text-xs text-gray-300 leading-relaxed">
+                  <span className="font-semibold uppercase tracking-wide text-gray-200">*</span>{" "}
+                  Costs less than hiring a receptionist — works 24/7
+                </p>
+              </div>
+              <Button asChild className="w-full h-12 text-base font-semibold bg-secondary hover:bg-secondary/90 text-white">
+                <a
+                  href="https://wa.me/923244910858?text=Hi%2C%20I%20want%20you%20to%20setup%20Pro%20plan%20for%20my%20business.%20Can%20you%20tell%20me%20how%20it%20works%3F"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Get Pro Plan
+                </a>
+              </Button>
             </div>
           </div>
           
-          <p className="text-center text-gray-500 mt-8 text-sm">Setup complete in under 24 hours. No technical skills required.</p>
+          {/* <p className="text-center text-gray-500 mt-8 text-sm">Setup complete in under 24 hours. No technical skills required.</p> */}
         </div>
       </section>
 
@@ -340,14 +437,20 @@ export default function Home() {
         <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px' }} />
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">
-            Start Capturing Every Customer Today
+            Start Capturing Every Patient Today
           </h2>
           <p className="text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto">
             Stop losing business to slow replies. Set up your AI Receptionist and let it handle the front desk while you focus on your craft.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button size="lg" className="h-14 px-8 bg-secondary hover:bg-secondary/90 text-white text-lg shadow-lg font-bold">
-              Get Started on WhatsApp
+            <Button asChild size="lg" className="h-14 px-8 bg-secondary hover:bg-secondary/90 text-white text-lg shadow-lg font-bold">
+              <a
+                href="https://wa.me/923244910858?text=Hi%2C%20I%20want%20a%20demo%20of%20your%20AI%20receptionist%20for%20my%20clinic.%20Can%20you%20show%20me%20how%20it%20handles%20patient%20appointments%3F"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Get Started on WhatsApp
+              </a>
             </Button>
             <Button size="lg" variant="outline" className="h-14 px-8 text-lg bg-transparent border-white/30 text-white hover:bg-white/10">
               Talk to Sales
@@ -366,7 +469,7 @@ export default function Home() {
               </div>
               <span className="font-bold text-lg text-white">Clinicon AI</span>
             </div>
-            <p className="text-sm max-w-sm">The 24/7 AI Receptionist for modern service businesses. Never miss a customer again.</p>
+            <p className="text-sm max-w-sm">The 24/7 AI Receptionist for modern service businesses. Never miss a patient again.</p>
           </div>
           
           <div>
